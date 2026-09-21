@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️ | Will You Be My Girlfriend?</title>
+  <meta name="description" content="A romantic interactive journey built specially for you.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Sacramento&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Ambient Particle Canvas for Floating Hearts & Petals -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow orb-1"></div>
+  <div class="ambient-glow orb-2"></div>
+
+  <!-- Top Navigation -->
+  <header class="navbar-wrapper">
+    <nav class="navbar glass-card">
+      <a href="#hero" class="logo">
+        <span class="logo-heart">❤️</span>
+        <span class="logo-text">For You</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#trust" class="nav-link">Trust</a>
+        <a href="#question" class="nav-link">The Question</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div class="mobile-nav glass-card" id="mobile-nav">
+      <a href="#hero" class="mobile-nav-link">Home</a>
+      <a href="#trust" class="mobile-nav-link">Trust</a>
+      <a href="#question" class="mobile-nav-link">The Question</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-container">
+
+        <!-- Left Content -->
+        <div class="hero-text-content">
+          <div class="romantic-pill animate-fade-in">
+            <span class="heart-pulse">❤️</span> You mean a lot to me...
+          </div>
+
+          <h1 class="hero-title animate-slide-up">
+            Hey Beautiful <span class="title-heart">❤️</span>
+          </h1>
+
+          <h2 class="hero-subtitle animate-slide-up delay-1">
+            I know you're not easy to trust...
+          </h2>
+
+          <p class="hero-description animate-slide-up delay-2">
+            And I respect that. So I'll be honest with you... I'm not here to rush you, I just want you to know that I'm
+            serious, and I'm willing to earn your trust, step by step.
+          </p>
+
+          <div class="hero-actions animate-slide-up delay-3">
+            <a href="#trust" class="btn-primary glow-button">
+              <span>Let's Start ❤️</span>
+            </a>
+            <div class="tag-badge">
+              <span class="sparkle">✨</span> Better Together <span class="tag-heart">❤️</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content: Glowing Rose Visual -->
+        <div class="hero-visual animate-scale-in">
+          <div class="glowing-rose-card glass-card">
+            <div class="rose-image-wrapper">
+              <img src="images/rose.png" alt="Glowing Red Rose" class="hero-rose-img">
+              <div class="neon-heart-glow"></div>
+            </div>
+            <div class="rose-card-footer">
+              <span class="handwritten-accent">Every detail, just for you ♡</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#trust" class="scroll-indicator" aria-label="Scroll down to trust section">
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+        <svg class="arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section id="trust" class="trust-section">
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-heart">♡</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="trust-container">
+        <div class="section-header text-center">
+          <span class="step-number">1</span>
+          <h2 class="section-title">How Much Do You Trust Me?</h2>
+          <p class="section-subtitle">
+            Be honest... I can handle the truth. Just give me a percentage of how much you trust me right now.
+          </p>
+        </div>
+
+        <!-- Interactive Slider Box -->
+        <div class="trust-slider-card glass-card">
+          <div class="slider-wrapper">
+            <div class="slider-track-container">
+              <input type="range" id="trust-slider" min="0" max="100" value="70" class="custom-range"
+                aria-label="Trust percentage slider">
+              <div class="slider-progress" id="slider-progress" style="width: 70%;"></div>
+            </div>
+            <div class="percentage-badge" id="percentage-badge">
+              <span id="trust-value">70</span>%
+            </div>
+          </div>
+
+          <!-- Dynamic Response Message -->
+          <div class="trust-response-box">
+            <span class="response-heart">❤️</span>
+            <p id="trust-message" class="trust-message-text">
+              That's a good start... I'm working hard to make it 100%.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Trust Cards -->
+        <div class="trust-cards-grid">
+          <!-- Card 1 -->
+          <div class="trust-card glass-card">
+            <div class="card-icon-wrapper">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="card-title">I'm Consistent</h3>
+            <p class="card-desc">I show up, I care, and I mean what I say.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="trust-card glass-card">
+            <div class="card-icon-wrapper">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </div>
+            <h3 class="card-title">I Value You</h3>
+            <p class="card-desc">You're special, and you always will be.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="trust-card glass-card">
+            <div class="card-icon-wrapper">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <h3 class="card-title">Better Future</h3>
+            <p class="card-desc">I'm building a better future, and I want you in it.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="trust-card glass-card">
+            <div class="card-icon-wrapper">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M18.178 8c5.096 0 5.096 8 0 8-2.3 0-3.933-1.638-6.178-4-2.245 2.362-3.878 4-6.178 4-5.096 0-5.096-8 0-8 2.3 0 3.933 1.638 6.178 4 2.245-2.362 3.878-4 6.178-4z" />
+              </svg>
+            </div>
+            <h3 class="card-title">I Choose You</h3>
+            <p class="card-desc">Not just today, but every single day.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE QUESTION SECTION -->
+    <section id="question" class="question-section">
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-heart">♡</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="question-container">
+        <!-- Question Stage Header -->
+        <div class="question-header text-center" id="question-header">
+          <span class="step-number">2</span>
+          <h2 class="section-title main-question-title">Will You Be My Girlfriend?</h2>
+          <p class="question-subtitle">
+            After everything... the trust, the talks, the moments... I still choose you. Will you be my girlfriend?
+          </p>
+        </div>
+
+        <!-- Teaser Toast overlay -->
+        <div class="teaser-toast" id="teaser-toast">
+          <span id="teaser-text">Are you sure? 😏</span>
+        </div>
+
+        <!-- Action Buttons Box -->
+        <div class="question-actions-box" id="question-actions-box">
+          <!-- YES Button -->
+          <button id="btn-yes" class="btn-yes glow-button">
+            <span class="btn-heart">❤️</span> Yes
+          </button>
+
+          <!-- Playful NO Button Wrapper for bounded movement -->
+          <div class="no-btn-wrapper" id="no-btn-wrapper">
+            <button id="btn-no" class="btn-no glass-card">
+              <span>No</span>
+            </button>
+          </div>
+        </div>
+
+        <p class="no-hint-text" id="no-hint-text"></p>
+
+        <!-- CELEBRATION STAGE (Hidden initially, revealed on YES) -->
+        <div class="celebration-stage hidden" id="celebration-stage">
+          <div class="celebration-header">
+            <h2 class="celebration-title script-heading">Yes! <span class="heart-pulse">❤️</span></h2>
+            <p class="celebration-subtitle">
+              You just made my day... I'm so lucky to have you. <span class="accent-heart">❤️</span>
+            </p>
+            <p class="celebration-subtext">
+              I promise to keep giving you reasons to smile every single day.
+            </p>
+          </div>
+
+          <!-- Bouquet Presentation Card -->
+          <div class="bouquet-card glass-card animate-scale-in">
+            <div class="bouquet-img-wrapper">
+              <img src="images/bouquet.png" alt="Romantic Rose Bouquet" class="bouquet-img">
+              <div class="bouquet-aura"></div>
+            </div>
+
+            <div class="together-badge">
+              <span>❤️ Together Forever</span>
+            </div>
+          </div>
+
+          <!-- Final Story Card -->
+          <div class="story-card glass-card">
+            <h3 class="story-title">Our Story Begins <span class="story-heart">❤️</span></h3>
+            <p class="story-text">
+              Maybe this is only the beginning, but I'm really glad you said yes.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="romantic-footer">
+    <div class="footer-content text-center">
+      <div class="footer-heart">♡</div>
+      <p class="footer-message">Thank you for being you. ❤️</p>
+      <p class="footer-quote">Real love isn't perfect, but it's always worth it.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
